@@ -1,0 +1,160 @@
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--text-highlight);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: -9px;
+  background-color: white;
+  border: 3px solid var(--text-highlight);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline .container.left:first-of-type::after {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.right::after {
+  left: -9px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: #333;
+  position: relative;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.timeline-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #eee;
+}
+
+.timeline-subtitle {
+  font-size: 14px;
+}
+
+.timeline-time {
+  font-size: 14px;
+}
+
+.timeline-time i {
+  margin-right: 6px;
+}
+
+.content ul {
+  margin-top: 8px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.content ul li::marker {
+  color: #eee;
+}
+
+.content:hover {
+  scale: 1.05;
+}
+
+.content ul li {
+  color: #eee;
+  font-size: 12px;
+}
+
+.gray-text {
+  color: #bbb;
+}
+
+@media screen and (max-width: 640px) {
+  .timeline {
+    max-width: 800px;
+  }
+
+  .timeline::after {
+    left: 31px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .left::after,
+  .right::after {
+    left: 21px;
+  }
+
+  .right {
+    left: 0%;
+  }
+
+  .timeline-title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .timeline-subtitle {
+    font-size: 12px;
+  }
+
+  .timeline-time {
+    font-size: 12px;
+  }
+
+  .content ul li {
+    font-size: 10px;
+  }
+}

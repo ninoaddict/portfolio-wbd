@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --background: #0b1120;
+  --text-highlight: #b74b4b;
+  --shadow-color: 220deg 72% 0%;
+  --shadow-color2: 0deg 0% 9%;
+  --shadow-elevation-low:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-low2:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color2) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color2) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color2) / 0.34);
+  --shadow-elevation-medium:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background), #06090f);
+  color: white;
+  overflow-x: hidden;
+}
+
+.top-blur {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 30;
+  height: 3rem;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--background), transparent);
+  backdrop-filter: blur(1rem);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.bottom-blur {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  height: 3rem;
+  width: 100%;
+  background: linear-gradient(to top, #06090f, transparent);
+  backdrop-filter: blur(1rem);
+  -webkit-mask-image: linear-gradient(to top, black, transparent);
+  mask-image: linear-gradient(to top, black, transparent);
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(-100px);
+  }
+}
+
+.title-container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.title-text {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+@media(min-width: 640px) {
+  .title-text {
+    font-size: 38px;
+  }
+}
+
+@media(min-width: 1024px) {
+  .title-text {
+    font-size: 42px;
+  }
+}

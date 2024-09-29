@@ -1,0 +1,148 @@
+header {
+  position: fixed;
+  z-index: 30;
+}
+
+.navbar {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  row-gap: 6px;
+  width: 30px;
+  height: 27px;
+  cursor: pointer;
+  /* margin: 1rem; */
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+}
+
+.burger span {
+  height: 4px;
+  width: 100%;
+  background-color: #bbb;
+  border-radius: 9999px;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    display: flex;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: 0.5s ease-in-out;
+  }
+
+  .navbar ul {
+    background-color: rgb(24, 33, 47);
+    border-radius: 6px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .menu-toggle:checked ~ .navbar {
+    transform: translateX(0);
+  }
+
+  .menu-toggle:checked ~ .burger span:nth-child(1) {
+    transform-origin: left;
+    transform: rotate(40deg) scaleX(1.05);
+  }
+
+  .menu-toggle:checked ~ .burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked ~ .burger span:nth-child(3) {
+    transform-origin: left;
+    transform: rotate(-40deg) scaleX(1.05);
+  }
+
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  header nav ul li {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #bbb;
+    transition: 0.3s ease-in-out;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  header nav ul li:hover {
+    background-color: var(--text-highlight);
+    color: white;
+    border-radius: 10px;
+  }
+}
+
+@media(min-width: 641px) {
+  header {
+    display: block;
+    top: 24px;
+    width: 100%;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  header nav ul {
+    display: flex;
+    gap: 15px;
+    background: rgb(24, 33, 47);
+    border-radius: 9999px;
+    border-width: 1px;
+    border-color: rgb(52, 56, 65);
+    padding: 0.5rem;
+    border-style: solid;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
+  }
+
+  header nav ul li {
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: #bbb;
+    padding: 0.5rem 1rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  header nav ul li:hover {
+    border-radius: 9999px;
+    background-color: var(--text-highlight);
+    color: white;
+  }
+}

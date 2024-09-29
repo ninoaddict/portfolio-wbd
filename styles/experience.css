@@ -1,0 +1,41 @@
+#experience {
+  /* background-color: var(--background); */
+  padding: 48px 9% 48px;
+  overflow-x: hidden;
+}
+
+.margin-title {
+  margin-bottom: 20px;
+}
+
+.margin-title h1 {
+  position: relative;
+  /* padding: 15px 20px; */
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.margin-title h1::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.margin-title h1:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+@media (min-width: 640px) {
+  .margin-title {
+    margin-top: 48px;
+    margin-bottom: 36px;
+  }
+}
